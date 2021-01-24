@@ -1,0 +1,8 @@
+# glob
+syntax: glob
+
+lib/
+node_modules/
+yarn.lock
+yarn-error.log
+package-lock.json

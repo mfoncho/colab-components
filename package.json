@@ -1,0 +1,11 @@
+{
+  "name": "@colab/components",
+  "version": "1.0.0",
+  "description": "colab components",
+  "main": "index.ts",
+  "scripts": {
+    "test": "yarn test"
+  },
+  "author": "colab team",
+  "license": "ISC"
+}
