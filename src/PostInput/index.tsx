@@ -302,7 +302,7 @@ export default React.memo<IPostInput>((props: IPostInput) => {
             (text) =>
                 `${text.slice(0, selectionStart!)}${value}${text.slice(
                     selectionEnd!
-                )}`
+                )}` as string
         );
         // Queue focus to fire on next event loop pass
         // and dom reconcilation hopefully

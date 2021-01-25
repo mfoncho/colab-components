@@ -113,7 +113,7 @@ export default React.memo((props: IUploadFile) => {
 
             name.setValue(() => {
                 const parts = file.name.split(".");
-                return parts.slice(0, parts.length - 1).join(".");
+                return parts.slice(0, parts.length - 1).join(".") as string;
             });
 
             setType(type);
