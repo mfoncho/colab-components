@@ -12,24 +12,10 @@ import parse from "mdast-util-from-markdown";
 const mdsyntax = require("micromark-extension-gfm");
 const gfm = require("mdast-util-gfm");
 
-const sample = `
-# GFM
-## auto link literails
-
-www.example.com, https://example.com, and sample@example.com
-
-~one~ or ~~two~~ tildes.
-
-* [ ] to do
-* [x] done
-`;
-
 const extension = {
     extensions: [mdsyntax()],
     mdastExtension: [gfm.fomrMarkdown],
 };
-
-console.log(parse(sample, extension));
 
 type TableAlignT =
     | "-moz-initial"
