@@ -6,7 +6,8 @@
     "types": "lib/index.d.ts",
     "scripts": {
         "build": "tsc",
-        "test": "yarn test"
+        "test": "yarn test",
+        "postinstall": "tsc"
     },
     "prettier": {
         "tabWidth": 4,
