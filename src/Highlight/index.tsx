@@ -78,7 +78,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const Highlight = React.memo<IHighlight>(function ({
+export default React.memo<IHighlight>(function ({
     markers,
     children,
     onClick,
@@ -196,5 +196,3 @@ const Highlight = React.memo<IHighlight>(function ({
 
     return <Text>{content}</Text>;
 });
-
-export default React.memo(Highlight);

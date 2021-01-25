@@ -95,3 +95,5 @@ export function Case({ value, children }: ICase) {
         return null;
     }
 }
+
+export default { Switch, Case };
