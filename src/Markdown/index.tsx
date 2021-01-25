@@ -9,6 +9,14 @@ import { xcode, dracula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import Highlight, { MarkersT, IHighlighted } from "../Highlight";
 import parse from "mdast-util-from-markdown";
 
+const mdsyntax = require("micromark-extension-gfm");
+const gfm = require("mdast-util-gfm");
+
+const extension = {
+    extensions: [mdsyntax()],
+    mdastExtension: [gfm.fomrMarkdown],
+};
+
 type TableAlignT =
     | "-moz-initial"
     | "inherit"
@@ -651,7 +659,7 @@ export class Markdown extends Component<IMProps, IMState> {
     render() {
         const { children } = this.props;
         if (typeof children == "string") {
-            return this.process(parse(children) as IENode);
+            return this.process(parse(children, extension) as IENode);
         }
         return children;
     }
