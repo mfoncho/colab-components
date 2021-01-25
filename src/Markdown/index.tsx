@@ -7,8 +7,7 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { xcode, dracula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import Highlight, { MarkersT, IHighlighted } from "../Highlight";
-
-import markdown from "remark-parse";
+import parse from "mdast-util-from-markdown";
 
 type TableAlignT =
     | "-moz-initial"
@@ -34,12 +33,6 @@ interface IENode extends Node {
     url: string;
     align: TableAlignT[];
     children?: IENode[];
-}
-
-class Parser extends ((markdown as any).Parser as any) {
-    constructor(content: string) {
-        super(null, content);
-    }
 }
 
 function escapeHtml(html: string) {
@@ -658,9 +651,7 @@ export class Markdown extends Component<IMProps, IMState> {
     render() {
         const { children } = this.props;
         if (typeof children == "string") {
-            const parser = new Parser(children);
-            const parsed = parser.parse() as IENode;
-            return this.process(parsed);
+            return this.process(parse(children) as IENode);
         }
         return children;
     }
