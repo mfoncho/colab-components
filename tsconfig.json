@@ -2,7 +2,7 @@
     "compilerOptions": {
         "target": "es5",
         "module": "ESNext",
-        "jsx": "preserve",  
+        "jsx": "react",  
         "declaration": true,
         "sourceMap": true,
         "outDir": "./lib",
@@ -12,12 +12,7 @@
         "esModuleInterop": true,
         "lib": ["dom", "dom.iterable", "esnext"],
         "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": true,
-        "baseUrl": "./node_modules",
-        "paths": {
-            "@colab/types": ["@colab/types/src"],
-            "@colab/client": ["@colab/client/src"]
-        }
+        "forceConsistentCasingInFileNames": true
     },
     "include":["src/**/*"],
     "exclude": ["node_modules", "lib"]
