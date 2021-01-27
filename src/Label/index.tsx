@@ -32,8 +32,8 @@ const useStyles = makeStyles((theme) => {
     return {
         ...statusThemes,
         root: {
-            padding: theme.spacing(0.5),
-            borderRadius: theme.shape.borderRadius,
+            padding: theme.spacing(0.5, 1),
+            borderRadius: theme.spacing(1),
         },
     };
 });
