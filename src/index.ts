@@ -6,6 +6,7 @@ export { default as Text } from "./Text";
 export { default as SearchInput } from "./SearchInput";
 export { default as PostInput } from "./PostInput";
 export { default as Markdown } from "./Markdown";
+export { default as Label } from "./Label";
 export { default as Input } from "./Input";
 export { default as Image } from "./Image";
 export { default as Hightlight } from "./Highlight";
