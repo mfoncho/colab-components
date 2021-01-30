@@ -8,15 +8,16 @@ import { Typography } from "@material-ui/core";
 
 interface IDialog {
     text: string;
+    open?: boolean;
     loading?: boolean;
     disabled?: boolean;
     onClose: () => any | void;
     onConfirm: () => any | void;
 }
 
-export default React.memo<IDialog>(({ text, loading = false, ...props }) => {
+export default React.memo<IDialog>(({ text, open=true, loading = false, ...props }) => {
     return (
-        <Dialog open onClose={loading ? undefined : props.onClose}>
+        <Dialog open={open} onClose={loading ? undefined : props.onClose}>
             <DialogContent>
                 <Typography>{text}</Typography>
             </DialogContent>
