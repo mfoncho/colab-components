@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography"
 import Tooltip from "@material-ui/core/Tooltip";
 
 function arrowGenerator(color: any) {
@@ -85,7 +86,11 @@ const useStyles = makeStyles((theme) => ({
 export default function PointingTooltip(props: any) {
     const { arrow, ...classes } = useStyles();
     const [arrowRef, setArrowRef] = React.useState<HTMLElement | null>(null);
-
+    const title = typeof props.title == "string" ? (
+                    <Typography variant="subtitle2">
+                        {props.title}
+                    </Typography>
+                    ) : props.title
     return (
         <Tooltip
             classes={classes}
@@ -102,7 +107,7 @@ export default function PointingTooltip(props: any) {
             {...props}
             title={
                 <React.Fragment>
-                    {props.title}
+                    {title}
                     <span className={arrow} ref={setArrowRef as any} />
                 </React.Fragment>
             }

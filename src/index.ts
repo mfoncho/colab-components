@@ -13,3 +13,4 @@ export { default as Hightlight } from "./Highlight";
 export { default as Flow } from "./Flow";
 export { default as Dialog } from "./Dialog";
 export { default as ChannelIcon } from "./ChannelIcon";
+export { Picker as EmojiPicker } from "./Emoji";
