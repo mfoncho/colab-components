@@ -105,6 +105,7 @@ export default function PointingTooltip(props: any) {
                 },
             }}
             {...props}
+            placement={props.placement || "top"}
             title={
                 <React.Fragment>
                     {title}
