@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography"
 import Tooltip from "@material-ui/core/Tooltip";
@@ -85,7 +85,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function PointingTooltip(props: any) {
     const { arrow, ...classes } = useStyles();
-    const [arrowRef, setArrowRef] = React.useState<HTMLElement | null>(null);
+    const ref = useRef<HTMLSpanElement>(null);
     const title = typeof props.title == "string" ? (
                     <Typography variant="subtitle2">
                         {props.title}
@@ -98,8 +98,8 @@ export default function PointingTooltip(props: any) {
                 popperOptions: {
                     modifiers: {
                         arrow: {
-                            enabled: Boolean(arrowRef),
-                            element: arrowRef,
+                            enabled: true,
+                            element: ref.current,
                         },
                     },
                 },
@@ -109,7 +109,7 @@ export default function PointingTooltip(props: any) {
             title={
                 <React.Fragment>
                     {title}
-                    <span className={arrow} ref={setArrowRef as any} />
+                    <span className={arrow} ref={ref} />
                 </React.Fragment>
             }
         />
