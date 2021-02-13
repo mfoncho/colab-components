@@ -17,7 +17,7 @@ export type ITooltipProps = TooltipProps
 export default function Tooltip( { children, placement="top",...props}: ITooltipProps) {
     const classes = useStyles();
     return (
-        <BaseTooltip classes={classes} placement={placement} {...props}>
+        <BaseTooltip classes={classes} placement={placement} {...props} arrow={true}>
             {typeof children == "string"? <Typography variant="subtitle2">{children}</Typography>: children}
         </BaseTooltip>
     );
